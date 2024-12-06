@@ -1,3 +1,4 @@
+using AutoMapper;
 using Mango.Services.CouponAPI.Data;
 using Mango.Services.CouponAPI.Models;
 using Mango.Services.CouponAPI.Models.Dto;
@@ -12,9 +13,11 @@ namespace Mango.Services.CouponAPI.Controllers
     {
         private readonly AppDBContext _db;
         private ResponseDto _response;
+        private IMapper _mapper;
 
-        public CouponAPIController(AppDBContext db) {
+        public CouponAPIController(AppDBContext db, IMapper mapper) {
             _db = db;
+            _mapper = mapper;
             _response = new ResponseDto();
         }
 
@@ -22,7 +25,7 @@ namespace Mango.Services.CouponAPI.Controllers
         public ResponseDto Get() {
             try {
                 IEnumerable<Coupon> objList = _db.Coupons.ToList();
-                _response.Result = objList;
+                _response.Result = _mapper.Map<IEnumerable<CouponDto>>(objList);
             } catch (Exception ex) {
                 _response.IsSuccess = false;
                 _response.Message = ex.Message;
@@ -35,7 +38,7 @@ namespace Mango.Services.CouponAPI.Controllers
         public ResponseDto Get(int id) {
             try {
                 Coupon obj = _db.Coupons.First(u => u.CouponId == id);
-                _response.Result = obj;
+                _response.Result = _mapper.Map<CouponDto>(obj);
             } catch (Exception ex) {
                 _response.IsSuccess = false;
                 _response.Message = ex.Message;
