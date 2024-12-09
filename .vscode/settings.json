@@ -1,3 +1,4 @@
 {
-    "dotnet.defaultSolution": "Mango.sln"
+    "dotnet.defaultSolution": "Mango.sln",
+    "csharpextensions.includeNamespaces": false
 }
