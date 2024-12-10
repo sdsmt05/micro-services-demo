@@ -88,6 +88,7 @@ namespace Mango.Services.CouponAPI.Controllers
         }
 
         [HttpDelete]
+        [Route("{id:int}")]
         public ResponseDto Delete(int id) {
             try {
                 Coupon obj = _db.Coupons.First(u => u.CouponId == id);
