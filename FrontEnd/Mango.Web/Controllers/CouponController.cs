@@ -12,7 +12,7 @@ namespace Mango.Web.Controllers
         {
             _couponService = couponService;
         }
-        // GET: CouponController
+
         public async Task<IActionResult> CouponIndex()
         {
             List<CouponDto>? list = new();
@@ -24,6 +24,11 @@ namespace Mango.Web.Controllers
                 list = JsonConvert.DeserializeObject<List<CouponDto>>(Convert.ToString(response.Result));
             }
             return View(list);
+        }
+
+        public async Task<IActionResult> CouponCreate()
+        {
+            return View();
         }
 
     }
