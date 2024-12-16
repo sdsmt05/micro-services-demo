@@ -5,13 +5,13 @@
         {
             "type": "dotnet",
             "request": "launch",
-            "name": "Server",
+            "name": "CouponAPI",
             "projectPath": "${workspaceFolder}/Services/Mango.Services.CouponAPI/Mango.Services.CouponAPI.csproj"
         },
         {
             "type": "dotnet",
             "request": "launch",
-            "name": "Server",
+            "name": "AuthAPI",
             "projectPath": "${workspaceFolder}/Services/Mango.Services.AuthAPI/Mango.Services.AuthAPI.csproj"
         },
         {
@@ -26,7 +26,8 @@
         {
             "name": "Server/Client",
             "configurations": [
-                "Server",
+                "CouponAPI",
+                "AuthAPI",
                 "Client"
             ],
             "stopAll": true
