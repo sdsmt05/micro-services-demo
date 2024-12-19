@@ -61,6 +61,7 @@ namespace Mango.Services.CouponAPI.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "ADMIN")]
         public ResponseDto Post([FromBody] CouponDto couponDto) {
             try {
                 Coupon obj = _mapper.Map<Coupon>(couponDto);
@@ -75,6 +76,7 @@ namespace Mango.Services.CouponAPI.Controllers
         }
 
         [HttpPut]
+        [Authorize(Roles = "ADMIN")]
         public ResponseDto Put([FromBody] CouponDto couponDto) {
             try {
                 Coupon obj = _mapper.Map<Coupon>(couponDto);
@@ -90,6 +92,7 @@ namespace Mango.Services.CouponAPI.Controllers
 
         [HttpDelete]
         [Route("{id:int}")]
+        [Authorize(Roles = "ADMIN")]
         public ResponseDto Delete(int id) {
             try {
                 Coupon obj = _db.Coupons.First(u => u.CouponId == id);
