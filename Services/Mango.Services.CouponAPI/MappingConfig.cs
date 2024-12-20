@@ -1,4 +1,3 @@
-using System;
 using AutoMapper;
 using Mango.Services.CouponAPI.Models;
 using Mango.Services.CouponAPI.Models.Dto;
