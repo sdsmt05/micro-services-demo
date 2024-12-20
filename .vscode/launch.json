@@ -23,6 +23,12 @@
         {
             "type": "dotnet",
             "request": "launch",
+            "name": "ShoppingCartAPI",
+            "projectPath": "${workspaceFolder}/Services/Mango.Services.ShoppingCartAPI/Mango.Services.ShoppingCardAPI.csproj"
+        },
+        {
+            "type": "dotnet",
+            "request": "launch",
             "name": "Client",
             "projectPath": "${workspaceFolder}/FrontEnd/Mango.Web/Mango.Web.csproj"
         },
@@ -35,6 +41,7 @@
                 "CouponAPI",
                 "AuthAPI",
                 "ProductAPI",
+                "ShoppingCartAPI",
                 "Client"
             ],
             "stopAll": true
