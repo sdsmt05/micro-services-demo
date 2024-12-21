@@ -24,7 +24,7 @@
             "type": "dotnet",
             "request": "launch",
             "name": "ShoppingCartAPI",
-            "projectPath": "${workspaceFolder}/Services/Mango.Services.ShoppingCartAPI/Mango.Services.ShoppingCardAPI.csproj"
+            "projectPath": "${workspaceFolder}/Services/Mango.Services.ShoppingCartAPI/Mango.Services.ShoppingCartAPI.csproj"
         },
         {
             "type": "dotnet",
